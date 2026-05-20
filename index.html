@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños Mi Amor ✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cumpleanos_mi_amor.css">
+</head>
+<body>
+
+    <!-- Corazones flotantes de fondo -->
+    <div class="floating-hearts">
+        <div class="heart">💕</div>
+        <div class="heart">💖</div>
+        <div class="heart">💗</div>
+        <div class="heart">💝</div>
+        <div class="heart">💕</div>
+        <div class="heart">💖</div>
+        <div class="heart">💗</div>
+        <div class="heart">💝</div>
+    </div>
+
+    <div class="container">
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Feliz Cumpleaños</h1>
+            <p class="subtitle">Mi Amor ✨</p>
+            <div class="decorative-line"></div>
+        </section>
+
+        <!-- Mensaje de amor -->
+        <section class="love-message">
+            <p>
+                En este día tan especial, quiero que sepas que eres la persona más increíble que he conocido. 
+                Cada momento a tu lado es un regalo que atesoro en mi corazón.
+            </p>
+            <p>
+                Tu sonrisa ilumina mis días, tu risa es mi melodía favorita, y tu amor es el mejor regalo 
+                que la vida me ha dado. Gracias por existir y por elegirme para compartir tu vida.
+            </p>
+            <p>
+                Hoy celebro no solo tu cumpleaños, sino cada instante que hemos vivido juntos y todos los 
+                momentos maravillosos que nos esperan. Te amo más de lo que las palabras pueden expresar.
+            </p>
+            <p>
+                Que este nuevo año de vida esté lleno de sueños cumplidos, alegrías infinitas y todo el amor 
+                que mereces. Estaré siempre a tu lado, celebrando contigo cada victoria y apoyándote en cada paso.
+            </p>
+            <p>
+                Con todo mi amor, hoy y siempre. ❤️
+            </p>
+        </section>
+
+        <!-- Galería de fotos -->
+        <section class="gallery-section">
+            <h2 class="gallery-title">Nuestros Momentos Especiales</h2>
+            <div class="gallery">
+
+                <div class="photo-frame">
+                    <div class="photo-container">
+                        <img src="ddbb8462-4492-4867-9896-2b01f265a410.jpg" alt="Nuestra foto">
+
+                    </div>
+                    <p class="photo-caption">Nuestro primer momento juntos</p>
+                </div>
+
+                <div class="photo-frame">
+                    <div class="photo-container">
+                        <img src="Captura.jpg" alt="Nuestra foto">
+
+                    </div>
+                    <p class="photo-caption">Creando recuerdos inolvidables</p>
+                </div>
+
+                <div class="photo-frame">
+                    <div class="photo-container">
+                        <img src="d3d0e0a0-93e7-4c78-8413-d9751bc3101a.jpg" alt="Nuestra foto">
+
+                    </div>
+                    <p class="photo-caption">Cada día es especial contigo</p>
+                </div>
+
+                <div class="photo-frame">
+                    <div class="photo-container">
+                        <img src="foto1.jpg" alt="Nuestra foto">
+                    </div>
+                    <p class="photo-caption">Por muchos cumpleaños más juntos</p>
+                </div>
+
+                <div class="photo-frame">
+                    <div class="photo-container">
+                        <img src="4c408a46-491a-469a-bd5d-a957e522dced.jpg" alt="Nuestra foto">
+                    </div>
+                    <p class="photo-caption">Amor que crece cada día</p>
+                </div>
+
+                <div class="photo-frame">
+                    <div class="photo-container">
+                        <img src="981a8ed7-bd14-42ba-bfd4-e43bef7a1ab0.jpg" alt="Nuestra foto">
+
+                    </div>
+                    <p class="photo-caption">Juntos para siempre</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section class="footer">
+            <p class="footer-message">Te Amo Infinitamente</p>
+            <div class="footer-heart">💖</div>
+        </section>
+
+    </div>
+
+    <script>
+        // Efecto de destellos al hacer click
+        document.addEventListener('click', function(e) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.innerHTML = '✨';
+            sparkle.style.left = e.pageX + 'px';
+            sparkle.style.top = e.pageY + 'px';
+            sparkle.style.fontSize = (Math.random() * 20 + 20) + 'px';
+            sparkle.style.color = ['#B76E79', '#D4AF37', '#8B4654'][Math.floor(Math.random() * 3)];
+            document.body.appendChild(sparkle);
+            setTimeout(() => sparkle.remove(), 1000);
+        });
+
+        // Scroll reveal suave
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.photo-frame').forEach(frame => {
+            observer.observe(frame);
+        });
+    </script>
+
+</body>
+</html>
